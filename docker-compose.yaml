@@ -3,7 +3,7 @@ services:
     build: .
     command: /bin/sh -c 'trap exit TERM; echo "Ready, spleeping..."; sleep infinity & wait'
     volumes:
-      - ./docker/installer.conf.php:/tmp/installer.conf:ro
+      - ./installer.conf.php:/tmp/installer.conf:ro
     depends_on:
       - db
 
