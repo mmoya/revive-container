@@ -1,0 +1,17 @@
+services:
+  revive:
+    build: .
+    command: /bin/sh -c 'trap exit TERM; echo "Ready, spleeping..."; sleep infinity & wait'
+    volumes:
+      - ./docker/installer.conf.php:/tmp/installer.conf:ro
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.0.41-debian
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: revive
+      MYSQL_USER: revive
+      MYSQL_PASSWORD: revive
