@@ -19,7 +19,7 @@ type    = INNODB ; Either MyISAM, or INNODB, for MySQL ONLY
 
 [admin]
 username  = admin
-password  = secret
+password  = secretsecret
 email     = admin@example.com
 language  = en
 timezone  = ; empty to autodetect
